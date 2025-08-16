@@ -47,7 +47,7 @@ const GroupsSection: React.FC = () => {
     ];
 
     return (
-        <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-white via-gray-50/50 to-blue-50/30">
+        <section className="pt-16 sm:pt-20 lg:pt-24 pb-0 bg-gradient-to-br from-white via-gray-50/50 to-blue-50/30">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <motion.div
@@ -62,7 +62,7 @@ const GroupsSection: React.FC = () => {
                         <Star className="w-4 h-4 text-amber-500" />
                         What We Do
                     </div>
-                    
+
                     <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
                         Comprehensive Learning Environment
                     </h2>
@@ -71,8 +71,8 @@ const GroupsSection: React.FC = () => {
                     </p>
                 </motion.div>
 
-                {/* Activities Grid - Mobile Optimized */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-16 lg:mb-20">
+                {/* Activities Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                     {activities.map((activity, index) => (
                         <motion.div
                             key={index}
@@ -83,11 +83,15 @@ const GroupsSection: React.FC = () => {
                             whileHover={{ y: -8 }}
                         >
                             {/* Background Gradient */}
-                            <div className={`absolute inset-0 bg-gradient-to-br ${activity.bgColor} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-                            
+                            <div
+                                className={`absolute inset-0 bg-gradient-to-br ${activity.bgColor} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+                            />
+
                             {/* Content */}
                             <div className="relative z-10">
-                                <div className={`w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-r ${activity.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                                <div
+                                    className={`w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-r ${activity.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
+                                >
                                     <activity.icon className="h-8 w-8 sm:h-10 sm:w-10 text-white" />
                                 </div>
                                 <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 group-hover:text-gray-800 transition-colors duration-300">
@@ -97,14 +101,17 @@ const GroupsSection: React.FC = () => {
                                     {activity.description}
                                 </p>
                             </div>
-                            
+
                             {/* Hover Effect */}
-                            <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${activity.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`} />
+                            <div
+                                className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${activity.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}
+                            />
                         </motion.div>
                     ))}
                 </div>
             </div>
         </section>
+
     );
 };
 
